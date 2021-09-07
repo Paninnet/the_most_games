@@ -13,7 +13,7 @@ function App() {
     
       <div className="App">
         <Search />
-        <Content data={state.postData} />
+        <Content state={state} data={state.postData} />
       </div>
   );
 }

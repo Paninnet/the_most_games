@@ -5,13 +5,13 @@ import classes from './Search.module.css'
 export const Search = () => {
 
    const {state,changeInput,fetchPost} = useContext(postContext)
-
+   console.log(state);
 
 
    return(
       <div className={classes.search_wrapper}>
          <p>Идентификаторы строк</p>
-         <input onChange={e =>changeInput(e.target.value)} value={state.value} className={classes.input_search}  type="text" />
+         <input onChange={e =>changeInput(e.target.value)} value={state.value} className={state.wrongSearch ? classes.wrong_input : classes.input_search} placeholder='Введите значение'  type="text" />
          <button onClick={()=>{fetchPost(state.value); state.value=""}}>Подсчитать</button>
       </div>
    )

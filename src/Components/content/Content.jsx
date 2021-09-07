@@ -3,7 +3,8 @@ import React, { useContext } from 'react'
 import classes from './Content.module.css'
 const wowolsLetters = "aeiouyаоуыяеюи"
 
-export const Content = ({ data }) => {
+
+export const Content = ({ state,data }) => {
    if (data.length) {
 
       return <div className={classes.content_wrapper}>
@@ -27,7 +28,7 @@ export const Content = ({ data }) => {
                }
             }
 
-            return <div className={classes.data_item}>
+            return <div key={item.text} className={classes.data_item}>
                <div className={classes.text_item}>
                   {item.text}
                </div>
@@ -42,8 +43,6 @@ export const Content = ({ data }) => {
 
             </div>
          })}
-
-
       </div>
    }
    return (
@@ -60,41 +59,5 @@ export const Content = ({ data }) => {
          <div className={classes.nodata}>Введи значение в input</div>
       </div>
 
-
    )
-
-
 }
-
-
-{/* <div className={classes.text_container}>
-<p className={classes.title}>Текст</p>
-{data.map(item => {
-   return <div key={item.id} className={classes.content_item}>{item.text}</div>
-})}
-</div>
-<div className={classes.quantity_container}>
-<div className={classes.calced_quantity_container}>
-   <p className={classes.title}>Количество слов</p>
-   {data.map(item => {
-      return <div key={item.id} className={classes.content_item}>
-         {item.text.split(' ').length}
-      </div>
-   })}
-</div>
-<div className={classes.calced_quantity_container}>
-   <p className={classes.title}>Количество гласных</p>
-   {data.map(item => {
-      let counter = 0
-      for (let i = 0; i < item.text.length; i++) {
-         for (let j = 0; j < wowolsLetters.length; j++) {
-            if(item.text[i] ===wowolsLetters[j] ){
-               counter++
-            }
-         }
-      }
-      return <div key={item.id} className={classes.content_item}>{counter}
-      </div>
-   })}
-</div>
-</div> */}
