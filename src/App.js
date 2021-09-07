@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+
+import { useContext } from 'react';
 import './App.css';
+import { Content } from './Components/content/Content';
+import { Search } from './Components/search/Search';
+import { postContext } from './context/postContext';
+
+
 
 function App() {
+  const {state} =useContext(postContext)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+      <div className="App">
+        <Search />
+        <Content data={state.postData} />
+      </div>
   );
 }
 
