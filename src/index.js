@@ -4,14 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { PostState } from './context/PostState';
-import { BrowserRouter,Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
       <PostState>
-        <Route exact path='/the_most_games/' component={App}></Route>
+        <App />
       </PostState>
     </React.StrictMode>
   </BrowserRouter>,
