@@ -24,7 +24,6 @@ export const PostState = ({ children }) => {
    }
 
    const fetchPost = async (value) => {
-      // console.log(value);
       if (value.trim() && !isNaN(value) && value > 0) {
          try {
             const res = await axios.get(`https://tmgwebtest.azurewebsites.net/api/textstrings/${value}`, {
@@ -37,7 +36,7 @@ export const PostState = ({ children }) => {
             })
             
             dispatch({ type: SHOW_SELECTED_POST, res, value })
-            // console.log(state.postDataId);
+          
 
          } catch (error) {
             console.log(error.message);
@@ -45,6 +44,7 @@ export const PostState = ({ children }) => {
             alert(`Упсс, что-то пошло не так: ${error.message}`)
          }
       }else(inputWrongSearch())
+      await console.log(state.postDataId);
 
 
 

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
 import classes from './Content.module.css'
-const wowolsLetters = "aeiouyаоуыяеюи"
+const wowolsLetters = "aeiouyäöüаоуыяеюиáéíóúýæ"
 
 
 export const Content = ({ state,data }) => {

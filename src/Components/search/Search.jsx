@@ -5,7 +5,7 @@ import classes from './Search.module.css'
 export const Search = () => {
 
    const {state,changeInput,fetchPost} = useContext(postContext)
-   console.log(state);
+
 
 
    return(
