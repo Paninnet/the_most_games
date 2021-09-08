@@ -10,9 +10,9 @@ export const Search = () => {
 
    return(
       <div className={classes.search_wrapper}>
-         <p>Идентификаторы строк</p>
-         <input onChange={e =>changeInput(e.target.value)} value={state.value} className={state.wrongSearch ? classes.wrong_input : classes.input_search} placeholder='Введите значение'  type="text" />
-         <button onClick={()=>{fetchPost(state.value); state.value=""}}>Подсчитать</button>
+         <p className={classes.str_id}>Идентификаторы строк</p>
+         <input onChange={e =>changeInput(e.target.value)} value={state.value} className={state.wrongSearch ? classes.wrong_input : classes.input_search} placeholder='Введите целое число'  type="text" />
+         <button className={classes.calc_btn} onClick={()=>{fetchPost(state.value); state.value=""}}>Подсчитать</button>
       </div>
    )
 }

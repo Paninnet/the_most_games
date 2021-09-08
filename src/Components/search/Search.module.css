@@ -13,3 +13,23 @@
    border: 1px solid red;
    width: 70%;
 }
+
+@media(max-width:970px){
+
+   .str_id{
+      font-size: 10px;
+   }
+   .input_search{
+      width: 40%;
+      font-size: 10px;
+   }
+   .calc_btn{
+      font-size: 10px;
+   }
+}
+
+@media(max-width:420px){
+   .search_wrapper{
+      width: 100%;
+   }
+}

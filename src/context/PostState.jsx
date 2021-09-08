@@ -7,7 +7,7 @@ export const PostState = ({ children }) => {
    const initilalState = {
       value: "",
       postData: [],
-      postDataId : [],
+      postDataId: [],
       wrongSearch: false,
       errorMessage: ""
    }
@@ -19,8 +19,8 @@ export const PostState = ({ children }) => {
       dispatch({ type: ON_INPUT_CHANGE, value })
    }
 
-   const inputWrongSearch = () => {
-      dispatch({type:WRONG_SEARCH})
+   const inputWrongSearch = (value) => {
+      dispatch({ type: WRONG_SEARCH }, value)
    }
 
    const fetchPost = async (value) => {
@@ -34,20 +34,15 @@ export const PostState = ({ children }) => {
                   'Content-Type': 'application/json'
                }
             })
-            
-            dispatch({ type: SHOW_SELECTED_POST, res, value })
-          
 
+            if (state.postDataId.indexOf(value) === -1) {
+               dispatch({ type: SHOW_SELECTED_POST, res, value })
+            }
          } catch (error) {
-            console.log(error.message);
             dispatch({ type: SHOW_ERROR, error, state })
             alert(`Упсс, что-то пошло не так: ${error.message}`)
          }
-      }else(inputWrongSearch())
-      await console.log(state.postDataId);
-
-
-
+      } else (inputWrongSearch(value))
    }
    return (
       <postContext.Provider value={{ state, changeInput, fetchPost }}>

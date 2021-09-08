@@ -4,7 +4,8 @@ import classes from './Content.module.css'
 const wowolsLetters = "aeiouyäöüаоуыяеюиáéíóúýæ"
 
 
-export const Content = ({ state,data }) => {
+export const Content = ({data}) => {
+
    if (data.length) {
 
       return <div className={classes.content_wrapper}>
@@ -40,7 +41,6 @@ export const Content = ({ state,data }) => {
                      {counter}
                   </div>
                </div>
-
             </div>
          })}
       </div>

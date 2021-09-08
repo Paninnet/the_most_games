@@ -10,7 +10,6 @@ import { postContext } from './context/postContext';
 function App() {
   const {state} =useContext(postContext)
   return (
-    
       <div className="App">
         <Search />
         <Content state={state} data={state.postData} />
